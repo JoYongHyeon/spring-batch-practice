@@ -13,7 +13,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @RequiredArgsConstructor
-public class JobConfiguration {
+public class _1_TestJob_Chunk_Config {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
@@ -25,20 +25,20 @@ public class JobConfiguration {
      * - 대량 데이터 정산/집계 업무에는 Chunk 기반 Job 을 쓰지 않을까.?
      */
     @Bean
-    public Job testJob() {
-        return new JobBuilder("testJob", jobRepository)
-                .start(testStep()) // Chunk 기반 Step 실행
+    public Job testJob_1() {
+        return new JobBuilder("testJob_1", jobRepository)
+                .start(testStep_1()) // Chunk 기반 Step 실행
                 .build();
     }
 
     /**
-     * Step 구성
+     * Step 구성 (Step 단위로 트랜잭션이 독립적임)
      * - Chunk 단위로 트랜잭션 커밋 (ex. 10건마다 DB Commit)
      * - Reader → Processor → Writer 순서로 실행
      */
     @Bean
-    public Step testStep() {
-        return new StepBuilder("testStep", jobRepository)
+    public Step testStep_1() {
+        return new StepBuilder("testStep_1", jobRepository)
                 .<String, String>chunk(10, transactionManager)
                 .reader(sampleReader())
                 .processor(sampleProcessor())

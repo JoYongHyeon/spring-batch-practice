@@ -22,10 +22,10 @@ spring:
       enabled: true
       path: /h2-console
 
-logging:
-  level:
-    org.springframework.batch: DEBUG
-    tech.gate.step: DEBUG
+#logging:
+#  level:
+#    org.springframework.batch: DEBUG
+#    tech.gate.step: DEBUG
 
 #logging:
 #  level:

@@ -5,7 +5,15 @@
 등을 만들어줬음.
 2. Spring Batch 5.X (Spring Boot 3.x) 부터는 구조적으로 바뀜
 `@EnableBatchProcessing` 을 붙이면 Spring Boot 의 자동 구성(`BatchAutoConfiguration`) 과 충돌 <br>
--> 허탈하다..
+
+| 클래스명                 | 4.x 시절 역할                            | 5.x에서의 상태                | 대체 방식                                                               |
+| -------------------- | ------------------------------------ | ------------------------ | ------------------------------------------------------------------- |
+| `SimpleJob`          | 가장 기본적인 Job (순차적으로 Step 실행)          | ✅ 그대로 존재 (deprecated 아님) | `new JobBuilder("name", jobRepository).start(step)...build()` 로 생성됨 |
+| `FlowJob`            | 여러 Step을 조건(flow) 기반으로 연결 (분기, 병렬 등) | ✅ 그대로 존재 (deprecated 아님) | `new JobBuilder("name", jobRepository).start(flow).build()` 식으로 생성됨 |
+| `JobBuilderFactory`  | JobBuilder 생성 팩토리                    | ❌ deprecated             | 직접 `new JobBuilder("jobName", jobRepository)` 사용                    |
+| `StepBuilderFactory` | StepBuilder 생성 팩토리                   | ❌ deprecated             | 직접 `new StepBuilder("stepName", jobRepository)` 사용                  |
+
+--- 
 
 ### 요약
 - `@EnableBatchProcessing` 은 더 이상 필요하지 않음
