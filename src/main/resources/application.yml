@@ -9,23 +9,18 @@ spring:
     jdbc:
       initialize-schema: always
     job:
-      enabled: false  # ✅ 자동 실행 방지 (직접 JobLauncher로 실행)
+      enabled: false  # 자동 실행 방지 (직접 JobLauncher로 실행)
 
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/batchdb?serverTimezone=Asia/Seoul&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: rootpw
 
   h2:
     console:
       enabled: true
       path: /h2-console
-
-#logging:
-#  level:
-#    org.springframework.batch: DEBUG
-#    tech.gate.step: DEBUG
 
 #logging:
 #  level:

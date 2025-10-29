@@ -14,11 +14,6 @@
   - `Flow` 객체를 실행시켜서 작업을 진행함
 
 
-
----
-
-## JobInstance
-
 ---
 
 ## JobParameters
@@ -29,5 +24,5 @@
 
 ---
 
-## 대략적인 스프링 배치 도메인 흐름
+## 지금까지 이해한 대략적인 스프링 배치 도메인 흐름
 `JobParameters` -> `JobLauncher` -> `Job->execute()->Steps` -> `SimpleJob, FlowJob` <- `AbstractJob` <- `Job` 
