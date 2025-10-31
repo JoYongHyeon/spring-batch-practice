@@ -25,7 +25,23 @@ public class _3_JobParameter_Main {
                 .addDouble("price", 100.0)
                 .toJobParameters();
 
+
         jobLauncher.run(job, jobParameters);
+        getJobParameters(jobParameters);
         context.close();
+    }
+
+    private static void getJobParameters(JobParameters jobParameters) {
+        String stringTypeData = jobParameters.getString("name");
+        Long longTypeData = jobParameters.getLong("id");
+        Date dateTypeData = jobParameters.getDate("date");
+        Double doubleTypeData = jobParameters.getDouble("price");
+
+        System.out.println("============================================");
+        System.out.println("dateTypeData = " + dateTypeData);
+        System.out.println("longTypeData = " + longTypeData);
+        System.out.println("stringTypeData = " + stringTypeData);
+        System.out.println("doubleTypeData = " + doubleTypeData);
+        System.out.println("============================================");
     }
 }
