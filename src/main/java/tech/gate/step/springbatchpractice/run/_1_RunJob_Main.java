@@ -15,8 +15,7 @@ public class _1_RunJob_Main {
         ConfigurableApplicationContext context = SpringApplication.run(SpringBatchPracticeApplication.class, args);
 
         JobLauncher jobLauncher = context.getBean(JobLauncher.class);
-//        Job job = context.getBean("testJob_1", Job.class);
-        Job job = context.getBean("testJob_2", Job.class);
+        Job job = context.getBean("testJob_1", Job.class);
 
         // 중복 실행 방지를 위한 Unique Parameter 추가
         JobParameters params = new JobParametersBuilder()

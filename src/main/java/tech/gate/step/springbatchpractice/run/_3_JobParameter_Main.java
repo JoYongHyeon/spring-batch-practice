@@ -8,28 +8,24 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import tech.gate.step.springbatchpractice.SpringBatchPracticeApplication;
 
-public class _2_BadJob_Main {
+import java.util.Date;
+
+public class _3_JobParameter_Main {
 
     public static void main(String[] args) throws Exception {
-
         ConfigurableApplicationContext context = SpringApplication.run(SpringBatchPracticeApplication.class, args);
 
         JobLauncher jobLauncher = context.getBean(JobLauncher.class);
+        Job job = context.getBean("testJob_1", Job.class);
 
-        Job job = context.getBean("tasklet_job", Job.class);
-
-        /**
-         * "이미 완료된 JobInstance 가 있다" 는 이유로 다시 실행을 막음
-         * (JobInstanceAlreadyCompleteException)
-         */
-        JobParameters params = new JobParametersBuilder()
-                .addString("name", "data1")
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addString("name", "user1")
+                .addLong("id", 2L)
+                .addDate("date", new Date())
+                .addDouble("price", 100.0)
                 .toJobParameters();
 
-        System.out.println(">>> testJob 실행 시작 <<<");
-        jobLauncher.run(job, params);
-        System.out.println(">>> testJob 실행 완료 <<<");
-
+        jobLauncher.run(job, jobParameters);
         context.close();
     }
 }

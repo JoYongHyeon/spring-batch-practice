@@ -14,30 +14,30 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @RequiredArgsConstructor
-public class _2_TestJob_Tasklet_Config {
+public class _1_TestJob_Tasklet_Config {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
 
 
     @Bean
-    public Job testJob_2() {
-        return new JobBuilder("testJob_2", jobRepository)
-                .start(testStep_2())
-                .next(testStep_3())
+    public Job testJob_1() {
+        return new JobBuilder("tasklet_job", jobRepository)
+                .start(tasklet_step_1())
+                .next(tasklet_step_2())
                 .build();
     }
 
     @Bean
-    public Step testStep_2() {
-        return new StepBuilder("testStep_2", jobRepository)
+    public Step tasklet_step_1() {
+        return new StepBuilder("tasklet_step_1", jobRepository)
                 .tasklet(step1Tasklet(), transactionManager)
                 .build();
     }
 
     @Bean
-    public Step testStep_3() {
-        return new StepBuilder("testStep_3", jobRepository)
+    public Step tasklet_step_2() {
+        return new StepBuilder("tasklet_step_2", jobRepository)
                 .tasklet(step2Tasklet(), transactionManager)
                 .build();
     }
