@@ -11,6 +11,7 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
+import tech.gate.step.springbatchpractice.taskletClass.CustomTasklet;
 
 @Configuration
 @RequiredArgsConstructor
@@ -19,6 +20,10 @@ public class _1_TestJob_Tasklet_Config {
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
 
+    @Bean
+    public CustomTasklet customTasklet() {
+        return new CustomTasklet();
+    }
 
     @Bean
     public Job testJob_1() {
@@ -31,7 +36,7 @@ public class _1_TestJob_Tasklet_Config {
     @Bean
     public Step tasklet_step_1() {
         return new StepBuilder("tasklet_step_1", jobRepository)
-                .tasklet(step1Tasklet(), transactionManager)
+                .tasklet(customTasklet(), transactionManager)
                 .build();
     }
 
