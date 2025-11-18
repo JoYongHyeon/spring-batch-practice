@@ -16,6 +16,16 @@ public class CustomTasklet implements Tasklet {
          * 즉, 이제는 "Spring 이 콜백으로 주입해줄 테니까 기다려" 가 아닌
          * "필요하면 chunkContext에서 직접 꺼내 써라" 구조로 바뀜
          */
+        System.out.println("======= StepContribution =======");
+        System.out.println("readCount: "        + contribution.getReadCount());
+        System.out.println("writeCount: "       + contribution.getWriteCount());
+        System.out.println("filterCount: "      + contribution.getFilterCount());
+        System.out.println("parentSkipCount: "  + contribution.getProcessSkipCount());
+        System.out.println("readSkipCount: "    + contribution.getReadSkipCount());
+        System.out.println("writeSkipCount: "   + contribution.getWriteSkipCount());
+        System.out.println("processSkipCount: " + contribution.getProcessSkipCount());
+
+
         StepExecution stepExecution = chunkContext.getStepContext().getStepExecution();
 
         System.out.println("======= CustomTasklet 실행됨 =======");
