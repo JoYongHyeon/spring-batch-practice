@@ -30,16 +30,16 @@ lastUpdated      // JobExecution 이 마지막 저장될 때의 시스템 시간
 `_4_JobExecution` 의도적 실패를 한다면
 `BATCH_JOB_EXECUTION` 테이블의 `EXIT_CODE`값이 변화된걸 볼 수 있다.
 
-![img_2.png](img_2.png)
+![img_2.png](img/img_2.png)
 
 한번 더 `_4_JobExecution` 의도적으로 실패 한다면
 `BATCH_JOB_INSTANCE` 의 값은 변하지 않는다.
 결과 값을 보면 `BATCH_JOB_INSTANCE` 의 값은 추가되지 않지만,
 `BATCH_JOB_EXECUTION` 테이블에는 `STATUS=FAILED` 값으로 계속 객체가 생성되는것을 볼 수 있다.
 
-![img_3.png](img_3.png)
+![img_3.png](img/img_3.png)
 
-![img_4.png](img_4.png)
+![img_4.png](img/img_4.png)
 
 ---
 ## 배치 성공
@@ -47,15 +47,15 @@ lastUpdated      // JobExecution 이 마지막 저장될 때의 시스템 시간
 `_4_JobExecution_Run_Fail_Config.java` 에서 예외를 제거하고 다시 실행해 보자.
 
 여전히 `BATCH_JOB_INSTANCE` 의 테이블의 값은 변함없다.
-![img_5.png](img_5.png)
+![img_5.png](img/img_5.png)
 
 그리고 `BATCH_JOB_EXECUTION` 의 테이블에는 `COMPLETED` 라는 상태값으로 객체가 추가되었다.
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)
 
 ---
 ## 정리
 
-![img_7.png](img_7.png)
+![img_7.png](img/img_7.png)
 ```java
 JobInstance ID: 1
  ├─ JobExecution ID: 1 → FAILED

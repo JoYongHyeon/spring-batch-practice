@@ -17,7 +17,7 @@
 `ExitStatus` : 실행결과를 나타내는 클래스로서 종료코드를 포함(`UNKNOWN`, `EXECUTING`, `COMPLETED`, `NOOP`, `FAILED`, `STOPPED`) <br>
 `stepExecution` : StepExecution 객체 저장
 
-![img_11.png](img_11.png)
+![img_11.png](img/img_11.png)
 
 `StepContribution` 을 열어보면 `StepExecution` 을 참조하는 구조로
 **실시간 카운팅 및 상태 전달용** 정도라고 생각하면 될듯.

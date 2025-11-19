@@ -5,4 +5,4 @@
 - JobParameter 와 JobInstance 는 1:1 관계
 - `BATCH_JOB_EXECUTION_PARAM` 테이블과 매핑
 - 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)

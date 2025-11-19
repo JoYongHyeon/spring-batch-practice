@@ -16,7 +16,7 @@
 
 ### BATCH_JOB_INSTANCE 테이블과 매핑
 
-![img.png](img.png)
+![img.png](img/img.png)
 - `JOB_NAME` 과 `JOB_KEY (JobParameter 해시값)` 가 동일한 데이터는 중복해서 저장안됨
 
 ---

@@ -1,4 +1,4 @@
-package tech.gate.step.springbatchpractice.taskletClass;
+package tech.gate.step.springbatchpractice.config.tasklet;
 
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.StepExecution;

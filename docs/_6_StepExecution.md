@@ -22,5 +22,5 @@
 ---
 ### StepExecution 도메인
 
-![img_8.png](img_8.png)
+![img_8.png](img/img_8.png)
 [출처: 인프런 스프링 배치 강의 중](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B0%B0%EC%B9%98/dashboard)
