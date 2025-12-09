@@ -5,5 +5,5 @@
 모든 `meta data`를 저장
   - `JobLauncher`, `Job`, `Step` 구현체 내부에서 `CRUD` 기능을 처리한다.
    
-![img_5.png](img_5.png)
+![img_5.png](img/img_5.png)
 [출처: 인프런 스프링 배치 강의 중](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B0%B0%EC%B9%98/dashboard)

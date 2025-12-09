@@ -15,6 +15,6 @@
     - JobExecution 을 획득한 후 client 에게 바로 JobExecution 을 반환하고 배치처리를 완료
     - HTTP 요청에 의한 배치처리에 적합함 -> **배치처리 시간이 길 경우 응답이 늦어지지 않도록 함**
 
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)
 
 ---
